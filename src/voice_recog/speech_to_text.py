@@ -20,8 +20,13 @@ def SpeakText(command):
 	engine = pyttsx3.init()
 	engine.say(command) 
 	engine.runAndWait()
-	
-			
+'''
+    TODO: finish function for movement
+def Move(speech):
+    match speech:
+        case "foo"
+            tb.forward()
+'''
 # Loop infinitely for user to
 # speak
 
