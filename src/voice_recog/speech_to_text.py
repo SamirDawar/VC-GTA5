@@ -4,7 +4,7 @@
 
 import speech_recognition as sr
 import pyttsx3
-from bindings import textBinds as tb
+import textBinds as tb
 
 #GLOBAL
 FinalText = ""
@@ -20,13 +20,27 @@ def SpeakText(command):
 	engine = pyttsx3.init()
 	engine.say(command) 
 	engine.runAndWait()
-'''
-    TODO: finish function for movement
-def Move(speech):
-    match speech:
-        case "foo"
-            tb.forward()
-'''
+
+
+
+#TODO FINISH THIS
+def Move(command_speech):
+	match command_speech:
+		case "toodle pip":
+			tb.left()
+		case "tally ho":
+			tb.right()
+		case "excuse me":
+			tb.forward()
+		case "by jove":
+			tb.backwards()
+			
+
+
+
+
+
+
 # Loop infinitely for user to
 # speak
 
@@ -52,6 +66,8 @@ while(1):
 			MyText = MyText.lower()
 			FinalText = MyText
 			print(FinalText)
+			Move(FinalText)
+			
         
             
 	except sr.RequestError as e:
