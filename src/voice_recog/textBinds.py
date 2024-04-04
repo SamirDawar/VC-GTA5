@@ -20,4 +20,3 @@ def right():
 def long_right():
     pyautogui.press('d', presses=10)
 
-

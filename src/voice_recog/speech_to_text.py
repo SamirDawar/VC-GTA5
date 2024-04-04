@@ -2,9 +2,11 @@
 # speech to text and text to speech
 
 
+#TODO INSTALL AND IMPORT PIP KEYBOARD
 import speech_recognition as sr
 import pyttsx3
 import textBinds as tb
+import pyautogui as pg
 
 #GLOBAL
 FinalText = ""
@@ -25,15 +27,23 @@ def SpeakText(command):
 
 #TODO FINISH THIS
 def Move(command_speech):
+
 	match command_speech:
-		case "toodle pip":
+		case "right":
 			tb.left()
-		case "tally ho":
+		case "right":
 			tb.right()
-		case "excuse me":
+		case "forward":
 			tb.forward()
-		case "by jove":
+		case "backwards":
 			tb.backwards()
+		case "long right":
+			tb.long_right()
+		case "long left":
+			tb.long_left()
+		 case _ :
+		 	print("Word choice doesnt exist")
+
 			
 
 
@@ -44,6 +54,7 @@ def Move(command_speech):
 # Loop infinitely for user to
 # speak
 
+#TODO change to push to talk
 while(1): 
 	
 	# Exception handling to handle
