@@ -5,11 +5,14 @@
 #TODO INSTALL AND IMPORT PIP KEYBOARD
 import speech_recognition as sr
 import pyttsx3
-import textBinds as tb
 import pyautogui as pg
 
 #GLOBAL
 FinalText = ""
+
+words = ["skedaddle", "halt", "yonder", "launder", "f sharp", "f flat", "pardon me", "excuse me", "jump"]
+
+
 
 # Initialize the recognizer 
 r = sr.Recognizer() 
@@ -23,29 +26,7 @@ def SpeakText(command):
 	engine.say(command) 
 	engine.runAndWait()
 
-
-
-#TODO FINISH THIS
-def Move(command_speech):
-
-	match command_speech:
-		case "right":
-			tb.left()
-		case "right":
-			tb.right()
-		case "forward":
-			tb.forward()
-		case "backwards":
-			tb.backwards()
-		case "long right":
-			tb.long_right()
-		case "long left":
-			tb.long_left()
-		 case _ :
-		 	print("Word choice doesnt exist")
-
 			
-
 
 
 
@@ -77,7 +58,9 @@ while(1):
 			MyText = MyText.lower()
 			FinalText = MyText
 			print(FinalText)
-			Move(FinalText)
+			match FinalText:
+				case "skedaddle":
+					pg.keyDown("w")
 			
         
             
